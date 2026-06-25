@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganetrix - World's First Web Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>🧮 GANETRIX</h1>
+                <p>World's First Professional Web Calculator</p>
+            </div>
+
+            <div class="display-section">
+                <div class="history" id="history">0</div>
+                <div class="main-display" id="display">0</div>
+                <div class="memory-display" id="memory">Memory: 0</div>
+            </div>
+
+            <div class="button-group">
+                <!-- Memory Buttons -->
+                <div class="memory-buttons">
+                    <button class="btn btn-memory" onclick="memoryAdd()">M+</button>
+                    <button class="btn btn-memory" onclick="memorySubtract()">M-</button>
+                    <button class="btn btn-memory" onclick="memoryRecall()">MR</button>
+                    <button class="btn btn-memory" onclick="memoryClear()">MC</button>
+                </div>
+
+                <!-- Main Calculator Buttons -->
+                <div class="calculator-buttons">
+                    <!-- Row 1 -->
+                    <button class="btn btn-function" onclick="clearDisplay()">C</button>
+                    <button class="btn btn-function" onclick="deleteLast()">⌫</button>
+                    <button class="btn btn-function" onclick="toggleSign()">±</button>
+                    <button class="btn btn-operator" onclick="appendOperator('/')">÷</button>
+
+                    <!-- Row 2 -->
+                    <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+                    <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+                    <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+                    <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+
+                    <!-- Row 3 -->
+                    <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+                    <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+                    <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+                    <button class="btn btn-operator" onclick="appendOperator('-')">−</button>
+
+                    <!-- Row 4 -->
+                    <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+                    <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+                    <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+                    <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+
+                    <!-- Row 5 -->
+                    <button class="btn btn-number btn-zero" onclick="appendNumber('0')">0</button>
+                    <button class="btn btn-number" onclick="appendNumber('.')">.</button>
+                    <button class="btn btn-equals" onclick="calculate()">=</button>
+
+                    <!-- Row 6 - Advanced Functions -->
+                    <button class="btn btn-advanced" onclick="calculateSquareRoot()">√</button>
+                    <button class="btn btn-advanced" onclick="calculatePower()">x²</button>
+                    <button class="btn btn-advanced" onclick="calculatePower3()">x³</button>
+                    <button class="btn btn-advanced" onclick="appendOperator('%')">%</button>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Calculation History</h3>
+                <div class="history-list" id="historyList">
+                    <p>No calculations yet</p>
+                </div>
+                <button class="btn btn-function" onclick="clearHistory()">Clear History</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
